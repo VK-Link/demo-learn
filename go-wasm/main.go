@@ -1,8 +1,9 @@
 // main.go
 package main
 
-import "fmt"
+import "syscall/js"
 
 func main() {
-	fmt.Println("Hello, WebAssembly!")
+	alert := js.Global().Get("alert")
+	alert.Invoke("Hello WebAssembly!")
 }
